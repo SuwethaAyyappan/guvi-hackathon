@@ -712,8 +712,8 @@ def health_check():
     return jsonify({'status': 'unhealthy', 'database': 'disconnected'}), 500
 
 @app.route("/")
-def home():
-    return "Backend is running successfully 🚀"
+def dashboard():
+    return render_template("dashboard.html")
 # ============== RUN APPLICATION ==============
 
 if __name__ == '__main__':
