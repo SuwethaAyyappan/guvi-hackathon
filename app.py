@@ -730,7 +730,7 @@ if __name__ == '__main__':
     print("  GET /api/filters/options - Filter options")
     print("  GET /api/export/monthly-report - Monthly report data")
     print("  GET /api/health - Health check")
-    print("\nStarting server on http://localhost:5000")
+    print("\nStarting server on http://localhost:8080")
     print("="*60)
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=8080)
