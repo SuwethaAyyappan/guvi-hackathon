@@ -3,7 +3,7 @@ Hospital Analytics Dashboard - Flask Backend API
 Provides RESTful endpoints for hospital resource utilization analytics
 """
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import mysql.connector
 from mysql.connector import Error
