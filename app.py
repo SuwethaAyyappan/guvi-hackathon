@@ -10,16 +10,20 @@ from mysql.connector import Error
 from datetime import datetime, timedelta
 import json
 from decimal import Decimal
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend access
 
 # Database Configuration
 DB_CONFIG = {
-    'host': 'localhost',
-    'database': 'hospital_analytics',
-    'user': 'hospital_admin',
-    'password': 'SecurePassword123!'  # Update with your MySQL password
+    'host': os.getenv("DB_HOST"),
+    'database': os.getenv("DB_NAME"),
+    'user': os.getenv("DB_USER"),
+    'password': os.getenv("DB_PASSWORD"),
+    'port': os.getenv("DB_PORT", 3306)
 }
 
 def get_db_connection():
