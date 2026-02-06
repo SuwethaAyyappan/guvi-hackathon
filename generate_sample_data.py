@@ -8,13 +8,18 @@ import datetime
 from datetime import timedelta
 import mysql.connector
 from mysql.connector import Error
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configuration
 DB_CONFIG = {
-    'host': 'localhost',
-    'database': 'hospital_analytics',
-    'user': 'hospital_admin',  # Update with your MySQL username
-    'password': 'SecurePassword123!'   # Update with your MySQL password
+    'host': os.getenv("DB_HOST"),
+    'database': os.getenv("DB_NAME"),
+    'user': os.getenv("DB_USER"),
+    'password': os.getenv("DB_PASSWORD"),
+    'port': os.getenv("DB_PORT", 3306)
 }
 
 # Sample data pools

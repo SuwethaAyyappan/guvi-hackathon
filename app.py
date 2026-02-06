@@ -712,8 +712,17 @@ def health_check():
     return jsonify({'status': 'unhealthy', 'database': 'disconnected'}), 500
 
 @app.route("/")
-def dashboard():
-    return render_template("dashboard.html")
+def home():
+    return jsonify({
+        "project": "Hospital Analytics Dashboard",
+        "status": "Backend running successfully",
+        "available_endpoints": [
+            "/api/kpis/summary",
+            "/api/trends/admissions",
+            "/api/trends/bed-occupancy",
+            "/api/outcomes/summary"
+        ]
+    })
 # ============== RUN APPLICATION ==============
 
 if __name__ == '__main__':
